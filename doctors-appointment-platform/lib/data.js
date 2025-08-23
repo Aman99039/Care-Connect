@@ -6,43 +6,295 @@ export const features = [
     title: "Nutrition & Healthy Eating",
     description:
       "Focuses on balanced diets, understanding food labels, and making healthy food choices.",
-    details:
-      "IntroductionNutrition is the foundation of good health. The food we eat directly impacts our energy levels, growth, immunity, and even mental well-being. A poor diet is linked to chronic diseases such as diabetes, obesity, heart disease, and even certain cancers. On the other hand, a balanced diet can improve our productivity, help us stay active, and enhance our quality of life. Nutrition is not just about calories—it’s about providing the body with the right mix of macronutrients (carbohydrates, proteins, and fats) and micronutrients (vitamins and minerals).Balanced Diet & Food Groups.A healthy plate typically includes:Carbohydrates (50–60%): Foods like rice, whole wheat, oats, and potatoes provide energy. Choosing whole grains over refined ones ensures better digestion and prevents sudden spikes in blood sugar.Proteins (15–20%): Sources include pulses, lentils, eggs, dairy, fish, and meat. Proteins are essential for building muscles, repairing tissues, and supporting immunity.Healthy Fats (20–25%): Nuts, seeds, olive oil, and fish provide good fats that are necessary for brain function and hormone balance.Fruits & Vegetables: These provide vitamins, minerals, and fiber that protect against diseases. Experts recommend at least five servings per day.Water: Often overlooked, but staying hydrated improves metabolism, digestion, and skin health.Micronutrients & Their Importance Micronutrients are needed in small amounts but play a huge role in maintaining health:Iron prevents anemia and fatigue.Calcium & Vitamin D strengthen bones.Vitamin A improves eyesight and immunity.Iodine prevents goiter.Deficiencies in these nutrients are common in many communities, leading to preventable health problems.Nutrition Across the LifespanNutritional needs change with age:Children require more protein and calcium for growth.Adolescents need iron (especially girls), protein, and energy to support rapid changes.Adults should focus on balanced portions and limiting excess sugar, salt, and fat.Elderly need nutrient-dense foods and adequate hydration, as appetite and absorption reduce with age.Preventing Malnutrition and Obesity.Malnutrition is not just about being underweight; it also includes being overweight due to poor-quality diets. ",
+    details: (
+      <div className="p-6 space-y-4">
+        <section className="space-y-2">
+          <h3 className="font-semibold">Introduction</h3>
+          <p>
+            Nutrition is the foundation of good health. The food we eat directly
+            impacts our energy levels, growth, immunity, and even mental
+            well-being. A poor diet is linked to chronic diseases such as
+            diabetes, obesity, heart disease, and even certain cancers. On the
+            other hand, a balanced diet can improve our productivity, help us
+            stay active, and enhance our quality of life. Nutrition is not just
+            about calories—it’s about providing the body with the right mix of
+            macronutrients (carbohydrates, proteins, and fats) and
+            micronutrients (vitamins and minerals).
+          </p>
+        </section>
+
+        <section className="space-y-2">
+          <h3 className="font-semibold">Maternal Health</h3>
+          <p>
+            Pregnancy is a delicate stage where a woman needs proper nutrition,
+            medical care, and emotional support. Regular antenatal check-ups
+            detect complications early. Supplements like iron and folic acid
+            prevent anemia and birth defects. Vaccinations protect both mother
+            and child.
+          </p>
+        </section>
+
+        <section className="space-y-2">
+          <h3 className="font-semibold">Child Health</h3>
+          <p>
+            Child health programs focus on growth monitoring, immunization,
+            nutrition, and early childhood development. They reduce infant
+            mortality and ensure healthy development.
+          </p>
+        </section>
+        <section className="space-y-2">
+          <h3 className="font-semibold">Conclusion</h3>
+          <p>
+            Nutrition is not about strict diets or expensive superfoods—it’s
+            about making sustainable, everyday choices that keep our body and
+            mind strong. By adopting small but consistent changes, such as
+            eating more vegetables, drinking enough water, and reducing junk
+            food, we can create healthier lives and stronger communities.
+          </p>
+        </section>
+      </div>
+    ),
   },
   {
     icon: <Bike className="h-6 w-6 text-emerald-400" />,
     title: "Exercise & Fitness",
     description:
       "Promotes physical activity, regular exercise, and maintaining a healthy weight.",
-    details: "",
+    details: (
+      <div className="p-6 space-y-4">
+        <section className="space-y-2">
+          <h3 className="font-semibold">Introduction</h3>
+          <p>
+            Maternal and child health focuses on the well-being of women during
+            pregnancy, childbirth, and early motherhood, as well as the growth
+            and development of infants and children. Good maternal health
+            ensures safe pregnancies, while child health programs reduce infant
+            mortality and improve lifelong development.
+          </p>
+        </section>
+
+        <section className="space-y-2">
+          <h3 className="font-semibold">Maternal Health</h3>
+          <p>
+            Pregnancy is a delicate stage where a woman needs proper nutrition,
+            medical care, and emotional support. Regular antenatal check-ups
+            detect complications early. Supplements like iron and folic acid
+            prevent anemia and birth defects. Vaccinations protect both mother
+            and child.
+          </p>
+        </section>
+
+        <section className="space-y-2">
+          <h3 className="font-semibold">Child Health</h3>
+          <p>
+            Child health programs focus on growth monitoring, immunization,
+            nutrition, and early childhood development. They reduce infant
+            mortality and ensure healthy development.
+          </p>
+        </section>
+      </div>
+    ),
   },
   {
     icon: <ShowerHead className="h-6 w-6 text-emerald-400" />,
     title: "Personal Hygiene & Sanitation",
     description:
       "Focuses on handwashing, dental care, and general cleanliness to prevent infections.",
-    details: "",
+    details: (
+      <div className="p-6 space-y-4">
+        <section className="space-y-2">
+          <h3 className="font-semibold">Introduction</h3>
+          <p>
+            Maternal and child health focuses on the well-being of women during
+            pregnancy, childbirth, and early motherhood, as well as the growth
+            and development of infants and children. Good maternal health
+            ensures safe pregnancies, while child health programs reduce infant
+            mortality and improve lifelong development.
+          </p>
+        </section>
+
+        <section className="space-y-2">
+          <h3 className="font-semibold">Maternal Health</h3>
+          <p>
+            Pregnancy is a delicate stage where a woman needs proper nutrition,
+            medical care, and emotional support. Regular antenatal check-ups
+            detect complications early. Supplements like iron and folic acid
+            prevent anemia and birth defects. Vaccinations protect both mother
+            and child.
+          </p>
+        </section>
+
+        <section className="space-y-2">
+          <h3 className="font-semibold">Child Health</h3>
+          <p>
+            Child health programs focus on growth monitoring, immunization,
+            nutrition, and early childhood development. They reduce infant
+            mortality and ensure healthy development.
+          </p>
+        </section>
+      </div>
+    ),
   },
   {
     icon: <BedDouble className="h-6 w-6 text-emerald-400" />,
     title: "Reproductive & Sexual Health",
     description:
       "Includes family planning, sexual health education, and reproductive rights.",
-    details: "",
+    details: (
+      <div className="p-6 space-y-4">
+        <section className="space-y-2">
+          <h3 className="font-semibold">Introduction</h3>
+          <p>
+            Maternal and child health focuses on the well-being of women during
+            pregnancy, childbirth, and early motherhood, as well as the growth
+            and development of infants and children. Good maternal health
+            ensures safe pregnancies, while child health programs reduce infant
+            mortality and improve lifelong development.
+          </p>
+        </section>
+
+        <section className="space-y-2">
+          <h3 className="font-semibold">Maternal Health</h3>
+          <p>
+            Pregnancy is a delicate stage where a woman needs proper nutrition,
+            medical care, and emotional support. Regular antenatal check-ups
+            detect complications early. Supplements like iron and folic acid
+            prevent anemia and birth defects. Vaccinations protect both mother
+            and child.
+          </p>
+        </section>
+
+        <section className="space-y-2">
+          <h3 className="font-semibold">Child Health</h3>
+          <p>
+            Child health programs focus on growth monitoring, immunization,
+            nutrition, and early childhood development. They reduce infant
+            mortality and ensure healthy development.
+          </p>
+        </section>
+      </div>
+    ),
   },
   {
     icon: <Brain className="h-6 w-6 text-emerald-400" />,
     title: "Mental Well-being",
     description:
       "Focuses on stress management, mental health awareness, and emotional support.",
-    details: "",
+    details: (
+      <div className="p-6 space-y-4">
+        <section className="space-y-2">
+          <h3 className="font-semibold">Introduction</h3>
+          <p>
+            Maternal and child health focuses on the well-being of women during
+            pregnancy, childbirth, and early motherhood, as well as the growth
+            and development of infants and children. Good maternal health
+            ensures safe pregnancies, while child health programs reduce infant
+            mortality and improve lifelong development.
+          </p>
+        </section>
+
+        <section className="space-y-2">
+          <h3 className="font-semibold">Maternal Health</h3>
+          <p>
+            Pregnancy is a delicate stage where a woman needs proper nutrition,
+            medical care, and emotional support. Regular antenatal check-ups
+            detect complications early. Supplements like iron and folic acid
+            prevent anemia and birth defects. Vaccinations protect both mother
+            and child.
+          </p>
+        </section>
+
+        <section className="space-y-2">
+          <h3 className="font-semibold">Child Health</h3>
+          <p>
+            Child health programs focus on growth monitoring, immunization,
+            nutrition, and early childhood development. They reduce infant
+            mortality and ensure healthy development.
+          </p>
+        </section>
+      </div>
+    ),
   },
   {
     icon: <Baby className="h-6 w-6 text-emerald-400" />,
     title: "Maternal & Child Health",
     description:
       "Covers prenatal care, childbirth education, and child nutrition.",
-    details: "",
+    details: (
+      <div className="p-6 space-y-4">
+        <h2 className="text-xl font-bold">Maternal & Child Health</h2>
+
+        <section className="space-y-2">
+          <h3 className="font-semibold">Introduction</h3>
+          <p>
+            Maternal and child health focuses on the well-being of women during
+            pregnancy, childbirth, and early motherhood, as well as the growth
+            and development of infants and children. Good maternal health
+            ensures safe pregnancies, while child health programs reduce infant
+            mortality and improve lifelong development.
+          </p>
+        </section>
+
+        <section className="space-y-2">
+          <h3 className="font-semibold">Maternal Health</h3>
+          <p>
+            Pregnancy is a delicate stage where a woman needs proper nutrition,
+            medical care, and emotional support. Regular antenatal check-ups
+            detect complications early. Supplements like iron and folic acid
+            prevent anemia and birth defects. Vaccinations protect both mother
+            and child.
+          </p>
+        </section>
+
+        <section className="space-y-2">
+          <h3 className="font-semibold">Safe Delivery & Postnatal Care</h3>
+          <p>
+            Access to trained health workers during delivery is critical. After
+            birth, mothers need rest, nutrition, and monitoring to prevent
+            infections. Breastfeeding should start within the first hour of
+            birth and continue exclusively for six months.
+          </p>
+        </section>
+        <section className="space-y-2">
+          <h3 className="font-semibold">Child Health & Nutrition</h3>
+          <p>
+            The first 1,000 days of a child’s life (from conception to age 2)
+            are crucial for brain development and immunity. Exclusive
+            breastfeeding, timely vaccinations, and proper complementary feeding
+            prevent malnutrition and infections.
+          </p>
+        </section>
+        <section className="space-y-2">
+          <h3 className="font-semibold">Preventing Infant & Child Mortality</h3>
+          <ul>
+            <li>Ensuring clean drinking water.</li>
+            <li>Vaccinating against measles, polio, and other diseases.</li>
+            <li>Educating parents on hygiene and nutrition.</li>
+            <li>Preventing pneumonia and diarrhea with early treatment.</li>
+          </ul>
+        </section>
+        <section className="space-y-2">
+          <h3 className="font-semibold">Role of Mothers & Families</h3>
+          <p>Interactive Learning</p>
+          <ul>
+            <li>Pregnancy tracking apps with reminders.</li>
+            <li>Visual guides for breastfeeding positions</li>
+            <li>Nutrition games for children.</li>
+            <li>Preventing pneumonia and diarrhea with early treatment.</li>
+          </ul>
+        </section>
+        <section className="space-y-2">
+          <h3 className="font-semibold">Conclusion</h3>
+          <p>
+            Maternal and child health is the foundation of a healthy society.
+            When mothers are cared for and children are given the best start in
+            life, communities become stronger, healthier, and more resilient.
+            Investing in maternal and child health is one of the best
+            investments a society can make for its future.
+          </p>
+        </section>
+      </div>
+    ),
   },
 ];
 

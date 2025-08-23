@@ -141,7 +141,9 @@ export default function Home() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">{feature.description}</p>
+                  <div className="text-muted-foreground">
+                    {feature.description}
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -151,7 +153,7 @@ export default function Home() {
         {/* Floating Modal Overlay */}
         {selectedFeature && (
           <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
-            <Card className="w-[400px] relative max-h-[80vh] overflow-y-auto">
+            <Card className="w-[90vw] relative max-h-[90vh] overflow-y-auto">
               <Button
                 variant="ghost"
                 size="sm"
@@ -169,9 +171,9 @@ export default function Home() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">
+                <div className="text-black">
                   {selectedFeature.details ?? selectedFeature.description}
-                </p>
+                </div>
               </CardContent>
             </Card>
           </div>

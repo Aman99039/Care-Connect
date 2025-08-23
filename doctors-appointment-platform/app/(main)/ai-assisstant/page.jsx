@@ -1,116 +1,19 @@
-// "use client";
-// import React from "react";
-// import { Circle, PhoneCall, PhoneOff } from "lucide-react";
-// import { Button } from "@/components/ui/button";
-// import Vapi from "@vapi-ai/web";
-
-// export default function AiAssistantPage() {
-//   const [startCall, setStartCall] = React.useState(false);
-//   const [elapsed, setElapsed] = React.useState(0);
-//   const [currentRole, setCurrentRole] = React.useState("");
-//   const [livetranscript, setLiveTranscript] = React.useState("");
-
-//   // ✅ Initialize Vapi only once
-//   const vapi = React.useMemo(
-//     () => new Vapi(process.env.NEXT_PUBLIC_VAPI_PUBLIC_KEY),
-//     []
-//   );
-
-//   // ✅ Format seconds into MM:SS
-//   const formatTime = (seconds) => {
-//     const m = String(Math.floor(seconds / 60)).padStart(2, "0");
-//     const s = String(seconds % 60).padStart(2, "0");
-//     return `${m}:${s}`;
-//   };
-
-//   // ✅ Handle timer when call starts/ends
-//   React.useEffect(() => {
-//     let timer;
-//     if (startCall) {
-//       timer = setInterval(() => {
-//         setElapsed((prev) => prev + 1);
-//       }, 1000);
-//     } else {
-//       setElapsed(0); // reset timer when disconnected
-//     }
-//     return () => clearInterval(timer);
-//   }, [startCall]);
-
-//   const StartCall = () => {
-//     vapi.start(process.env.NEXT_PUBLIC_VAPI_ASSISTANT_ID);
-
-//     vapi.on("call-start", () => {
-//       setStartCall(true);
-//       console.log("Call started");
-//     });
-
-//     vapi.on("call-end", () => {
-//       setStartCall(false);
-//       console.log("Call ended");
-//     });
-
-//     vapi.on("speech-start", () => {
-//       console.log("Assistant started speaking");
-//       setCurrentRole("assistant");
-//     });
-
-//     vapi.on("speech-end", () => {
-//       console.log("Assistant stopped speaking");
-//       setCurrentRole("user");
-//     });
-
-//     vapi.on("message", (message) => {
-//       if (message.type === "transcript") {
-//         console.log(`${message.role}: ${message.transcript}`);
-//         if (message.transcriptType === "partial") {
-//           setLiveTranscript(message.transcript);
-//           setCurrentRole(message.role);
-//         }
-//       }
-//     });
-//   };
-
-//   return (
-//     <div>
-//       <div className="flex items-center justify-between">
-//         <h2 className="p-1 px-2 border rounded-md flex gap-2 items-center">
-//           <Circle className={startCall ? "text-green-500" : "text-red-500"} />
-//           {startCall ? "Connected" : "Not Connected"}
-//         </h2>
-//         <h2 className="font-bold text-xl text-gray-400">
-//           {formatTime(elapsed)}
-//         </h2>
-//       </div>
-//       <div>
-//         <h2>
-//           {currentRole} : {livetranscript || "No live transcript yet"}
-//         </h2>
-//       </div>
-//       {!startCall ? (
-//         <Button onClick={StartCall} className="mt-4 flex items-center gap-2">
-//           <PhoneCall /> Start Call
-//         </Button>
-//       ) : (
-//         <Button
-//           variant="destructive"
-//           className="mt-4 flex items-center gap-2"
-//           onClick={() => vapi.stop()} // ✅ Stop call
-//         >
-//           <PhoneOff /> Disconnect
-//         </Button>
-//       )}
-//     </div>
-//   );
-// }
-
-
 "use client";
 import React from "react";
 import { Circle, PhoneCall, PhoneOff, FileDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Vapi from "@vapi-ai/web";
 import jsPDF from "jspdf"; // ✅ PDF library
-
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { User, Stethoscope } from "lucide-react";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter
+} from "@/components/ui/card";
 export default function AiAssistantPage() {
   const [startCall, setStartCall] = React.useState(false);
   const [elapsed, setElapsed] = React.useState(0);
@@ -233,47 +136,125 @@ export default function AiAssistantPage() {
     });
   };
 
-  return (
-    <div>
-      <div className="flex items-center justify-between">
-        <h2 className="p-1 px-2 border rounded-md flex gap-2 items-center">
-          <Circle className={startCall ? "text-green-500" : "text-red-500"} />
-          {startCall ? "Connected" : "Not Connected"}
-        </h2>
-        <h2 className="font-bold text-xl text-gray-400">
-          {formatTime(elapsed)}
-        </h2>
-      </div>
+return (
+  <div className="p-4">
+    {/* Transcript Section */}
+    <Card className="mb-4">
+      <CardHeader>
+        <CardTitle>Transcript</CardTitle>
+        <CardDescription>Live conversation</CardDescription>
+      </CardHeader>
+      <CardContent className="h-[400px] overflow-y-auto bg-gray-100 rounded-lg p-4">
+        {fullTranscript.length === 0 ? (
+          <p className="text-gray-400 italic text-center">
+            {liveTranscript || "No live transcript yet"}
+          </p>
+        ) : (
+          <>
+            {fullTranscript.map((t, i) => (
+              <div
+                key={i}
+                className={`flex mb-3 ${
+                  t.role === "user" ? "justify-end" : "justify-start"
+                }`}
+              >
+                {/* Assistant bubble */}
+                {t.role !== "user" && (
+                  <Avatar className="mr-2">
+                    <AvatarFallback className="bg-gray-200">
+                      <Stethoscope className="h-4 w-4 text-gray-700" />
+                    </AvatarFallback>
+                  </Avatar>
+                )}
 
-      <div>
-        <h2>
-          {currentRole} : {liveTranscript || "No live transcript yet"}
-        </h2>
-      </div>
+                <div
+                  className={`px-3 py-2 rounded-lg max-w-xs shadow-sm ${
+                    t.role === "user"
+                      ? "bg-blue-500 text-white"
+                      : "bg-white border text-gray-800"
+                  }`}
+                >
+                  <p className="text-sm">{t.text}</p>
+                </div>
 
+                {/* User bubble */}
+                {t.role === "user" && (
+                  <Avatar className="ml-2">
+                    <AvatarFallback className="bg-blue-200">
+                      <User className="h-4 w-4 text-blue-700" />
+                    </AvatarFallback>
+                  </Avatar>
+                )}
+              </div>
+            ))}
+
+            {/* Live transcript bubble */}
+            {liveTranscript && (
+              <div
+                className={`flex mb-3 ${
+                  currentRole === "user" ? "justify-end" : "justify-start"
+                }`}
+              >
+                {currentRole !== "user" && (
+                  <Avatar className="mr-2">
+                    <AvatarFallback className="bg-gray-200">
+                      <Stethoscope className="h-4 w-4 text-gray-700" />
+                    </AvatarFallback>
+                  </Avatar>
+                )}
+                <div
+                  className={`italic px-3 py-2 rounded-lg max-w-xs ${
+                    currentRole === "user"
+                      ? "bg-blue-300 text-white"
+                      : "bg-gray-200 text-gray-700"
+                  }`}
+                >
+                  {liveTranscript}
+                </div>
+                {currentRole === "user" && (
+                  <Avatar className="ml-2">
+                    <AvatarFallback className="bg-blue-200">
+                      <User className="h-4 w-4 text-blue-700" />
+                    </AvatarFallback>
+                  </Avatar>
+                )}
+              </div>
+            )}
+          </>
+        )}
+      </CardContent>
+    </Card>
+
+    {/* Call Controls */}
+    <div className="flex flex-col items-center justify-center mt-6 space-y-4">
       {!startCall ? (
-        <Button onClick={StartCall} className="mt-4 flex items-center gap-2">
-          <PhoneCall /> Start Call
-        </Button>
+      <Button onClick={StartCall} className="flex items-center gap-2">
+        <PhoneCall /> Start Call
+      </Button>
       ) : (
-        <Button
-          variant="destructive"
-          className="mt-4 flex items-center gap-2"
-          onClick={() => vapi.stop()}
-        >
-          <PhoneOff /> Disconnect
-        </Button>
-      )}
+      <Button
+        variant="destructive"
+        className="flex items-center gap-2"
+        onClick={() => vapi.stop()}
+      >
+      <PhoneOff /> Disconnect
+    </Button>
+  )}
 
-      {/* ✅ Extra Download Report button (only after a call ends) */}
-      {lastReport && !startCall && (
-        <Button
-          onClick={() => generatePDFReport(lastReport)}
-          className="mt-4 flex items-center gap-2"
-        >
-          <FileDown /> Download Report Again
-        </Button>
-      )}
+  {lastReport && !startCall && (
+    <Button
+      onClick={() => generatePDFReport(lastReport)}
+      className="flex items-center gap-2"
+    >
+      <FileDown /> Download Report Again
+    </Button>
+  )}
     </div>
-  );
+  </div>
+);
+
 }
+
+
+
+

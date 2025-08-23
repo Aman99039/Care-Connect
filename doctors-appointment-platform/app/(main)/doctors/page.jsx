@@ -6,10 +6,18 @@ import DoctorSugggestor from "@/components/doctor-suggestor";
 export default async function DoctorsPage() {
   return (
     <>
+        <Link href="/ai-assisstant">
+  <div className="flex justify-center">
+    <div className="inline-flex items-center bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium shadow-sm mb-4">
+      🌟 New: AI Assistant Available. Talk to our AI to get reassurance and get some health advices to get you going. Click Here!!!!
+    </div>
+  </div>
+</Link>
+<hr />
       <DoctorSugggestor />
-      <Link href="/ai-assisstant"> Explore our new feature: AI Assistant </Link>
+      <hr />
       <div className="flex flex-col items-center justify-center mb-8 text-center">
-        <h1 className="text-3xl font-bold text-black mb-2">Find Your Doctor</h1>
+        <h1 className="text-3xl font-bold text-black mb-2 mt-6">Find Your Doctor</h1>
         <p className="text-muted-foreground text-lg">
           Browse by specialty or view all available healthcare providers
         </p>
