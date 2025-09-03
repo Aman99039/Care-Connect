@@ -24,11 +24,12 @@ It allows appointment booking, patient management, and doctor-patient communicat
 
 ## ⚙️ Installation
 ```
-   Clone the repo  
-   git clone https://github.com/Aman99039/Care-Connect.git
-   cd Care-Connect
-   ```bash
-   npm install
+   1. Clone the repo  
+      git clone https://github.com/Aman99039/Care-Connect.git
+      cd Care-Connect
+      ```bash
+   2. Install dependencies
+      npm install
 ```
 ---
 
