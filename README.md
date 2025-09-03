@@ -23,19 +23,22 @@ It allows appointment booking, patient management, and doctor-patient communicat
 ---
 
 ## ⚙️ Installation
-1. Clone the repo  
+```
+   Clone the repo  
+   git clone https://github.com/Aman99039/Care-Connect.git
+   cd Care-Connect
    ```bash
-2. npm install
+   npm install
+```
+---
 
 ## Create a .env file with
-MONGO_URI=your_mongo_connection
-CLOUDINARY_API_KEY=your_key
-FIREBASE_KEY=your_firebase_key
+```
+   MONGO_URI=your_mongo_connection,
+   CLOUDINARY_API_KEY=your_key,
+   FIREBASE_KEY=your_firebase_key,
+```
 
+---
 ## Run the app
-npm start
-
-
-
-  git clone https://github.com/Aman99039/Care-Connect.git
-   cd Care-Connect
+   npm start
