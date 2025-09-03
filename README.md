@@ -1,8 +1,3 @@
-
----
-
-### 📌 3. Care Connect – README.md
-```markdown
 # 🏥 Care Connect
 
 A healthcare-focused full-stack platform connecting patients with doctors.  
