@@ -1,11 +1,11 @@
-# 🏥 Care Connect
+# Care Connect
 
 A healthcare-focused full-stack platform connecting patients with doctors.  
 It allows appointment booking, patient management, and doctor-patient communication.
 
 ---
 
-## 🚀 Features
+## Features
 - User authentication (patients & doctors)
 - Appointment scheduling & management
 - Secure storage of patient records
@@ -14,7 +14,7 @@ It allows appointment booking, patient management, and doctor-patient communicat
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 - **Frontend:** React, Bootstrap
 - **Backend:** Node.js, Express.js
 - **Database:** MongoDB
@@ -22,7 +22,7 @@ It allows appointment booking, patient management, and doctor-patient communicat
 
 ---
 
-## ⚙️ Installation
+## Installation
 ```
    1. Clone the repo  
       git clone https://github.com/Aman99039/Care-Connect.git
